@@ -1,0 +1,13 @@
+dj-database-url
+Django
+gunicorn
+psycopg2
+whitenoise
+djangorestframework
+Pillow
+django-anymail[mailgun]
+django-filter
+django-ckeditor
+boto
+django-storages
+django-widget-tweaks

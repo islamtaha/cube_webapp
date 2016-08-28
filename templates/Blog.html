@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<head>
+		<title>Blog</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- stylesheet -->
+		<link rel="stylesheet" type="text/css" href={% static "css/bootstrap.min.css" %}>
+		<link rel="stylesheet" type="text/css" href={% static "css/common-styles.css" %}>
+		<link rel="stylesheet"  type="text/css" href={% static "css/animate.min.css" %}>
+		<!-- stylesheet -->
+
+		<!-- faveicon_tag -->
+	<link rel="shortcut icon" href={% static "img/faveicon.ico" %} type="image/x-icon">
+		<!-- faveicon_tag -->
+	</head>
+{% endblock head %}
+
+
+
+{% block content %}
+<body id="blog">
+		<div class="container-fluid inner-pages-nav" >
+			<div class="container">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						<a class="navbar-brand colored_logo" href="index.html"></a>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+							<li><a href={% url 'index' %}>Home</a></li>
+							<li><a href={% url 'projects' %}>Projects</a></li>
+							<li><a href={% url 'portoflio' %}>Portfolio</a></li>
+							<li><a href={% url 'about' %}>About</a></li>
+							<li><a href={% url 'blog' %}>Blog</a></li>
+							<li><a href={% url 'contact_us' %}>Contact</a></li>
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+			</div>
+		</div>
+		<div class="container-fluid blog_hdr inner-pages-hdr wow fadeInUp"data-wow-duration="1s">
+			<div class="row">
+				<h1 class="text-center"> Blog</h1>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row wow fadeInUp"  data-wow-delay="0.5s" data-wow-duration="1s" >
+				{% for post in posts %}
+				<div class="post col-xs-11 col-sm-5 col-md-5 grow pic">
+					<a href={% url 'post' post.id %} class="post_img row ">
+						<img src={{ post.image.url }} class="img-responsive">
+					</a>
+					<div class="post_desc">
+						<a href={% url 'post' post.id %} class=" pull-left">
+							<img src={{ post.image.url }} class="img-responsive post_creator_img">
+						</a>
+						<h4 class="col-xs-8 col-md-9" >
+							<a href={% url 'post' post.id %}>
+								{{ post.title }}
+							</a>
+						</h4>
+						<div class="details text_center">
+							<div class="hr_line"></div>
+								<img src={% static "img/clock_icon.png" %} class="img-responsive">
+								<h4><a href={% url 'post' post.id %}>{{ post.date }}</a></h4>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="row text-center wow fadeInUp"  data-wow-delay="0.5s" data-wow-duration="1s" >
+			<a href="#" class="btn   btn-primary btn-success btn-lg text-center">
+				See More
+			</a>
+		</div>
+
+      <footer class =" container-fluid ">
+       <div class="row">
+        <div id="social_media" class=" pull-left  col-md-6 col-sm-6 col-md-6">
+         <a href="#"><img src={% static "img/facebook_icon.png" %} id="facebook_icon" class="social_icon"></a>
+         <a href="#"><img src={% static "img/twitter_icon.png" %} id="twitter_icon" class="social_icon"></a>
+         <a href="#"><img src={% static "img/behance_icon.png" %} id="behance_icon" class="social_icon"></a>
+         <a href="#"><img src={% static "img/linkedin_icon.png" %} id="linkedin_icon" class="social_icon"></a>
+        </div>
+        <h4 class="text-center col-md-6 col-sm-6 col-md-6 ">
+         Copyright &copy; 2014 | cube| All Rights Reserved
+        </h4>
+       </div>
+      </footer>
+	</body>
+{% endblock content %}
+	<!-- javascript -->
+{% block js %}
+	<script type="text/javascript" src={% static "js/jquery-2.1.1.js" %} ></script>
+	<script type="text/javascript" src={% static "js/bootstrap.min.js" %}></script>
+	<script src={% static "js/wow.min.js" %}></script>
+	<script>
+	 new WOW().init();
+	</script>
+{% endblock js %}
+	<!-- javascript -->

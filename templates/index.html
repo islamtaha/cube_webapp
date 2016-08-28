@@ -1,0 +1,291 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cube Solution</title>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,300' rel='stylesheet' type='text/css'>
+	<!-- stylesheet -->
+	<link rel="stylesheet" type="text/css" href={% static "css/bootstrap.min.css" %}>
+	<link rel="stylesheet" type="text/css" href={% static "css/common-styles.css" %}>
+	<link rel="stylesheet"  type="text/css" href={% static "css/animate.min.css" %}>
+	<!-- stylesheet -->
+
+	<!-- faveicon_tag -->
+	<link rel="shortcut icon" href={% static "img/faveicon.ico" %} type="image/x-icon">
+	<!-- faveicon_tag -->
+</head>
+<body id="home">
+	<!-- jumbotron -->
+	<section class="jumbotron " id="section_1">
+		<div class="container">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid nav_align">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand white_logo " href={% url 'index' %}></a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href={% url 'index' %}>Home</a></li>
+							<li><a href={% url 'projects' %}>Projects</a></li>
+							<li><a href={% url 'portoflio' %}>Portfolio</a></li>
+							<li><a href={% url 'about' %}>About</a></li>
+							<li><a href={% url 'blog' %}>Blog</a></li>
+							<li><a href={% url 'contact_us' %}>Contact</a></li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+			<div id="scrollspy" class="navbar-example">
+				<!-- <div  class="sec_icon"> -->
+				<a href="#section_1"><div  id="section_1_link" class="sec_icon"></div></a>
+				<a href="#section_2"><div  id="section_2_link" class="sec_icon"></div></a>
+				<a href="#section_3"><div  id="section_3_link" class="sec_icon"></div></a>
+				<a href="#section_4"><div id="section_4_link" class="sec_icon"></div></a>
+				<a href="#section_5"><div  id="section_5_link" class="sec_icon"></div></a>
+				<a href="#section_6"><div  id="section_6 _link" class="sec_icon"></div></a>
+			</div>
+
+			<div class="row pull-left col-sm-4 col-md-7 col-xs-5  tag_line" >
+				<h1 class = " wow fadeInLeft "  data-wow-delay="0.2s" data-wow-duration="3s">
+					Reaching Beyond </br> <span>Technology Era</span>
+				</h1>
+				<a href="our_portfolio.html"class=" wow fadeInUp btn   pull-left  btn-primary btn-success btn-lg"  data-wow-delay="1.2s">
+					See What We Do ?
+				</a>
+			</div>
+			<div class = " wow fadeInUp mobile_screen col-sm-8 col-md-5 col-xs-7 pull-right"  data-wow-delay="1s" data-wow-duration="2s">
+				<img src={% static "img/mobile.png" %} class="mobile_img_with_hand " >
+			</div>
+			<div class=" wow bounce"  id="arrow" data-wow-delay="1.9s" data-wow-duration="2s">
+				<a href="#section_2" >
+					<img src={% static "img/arrow.png" %} class="text-center "  >
+				</a>
+			</div>
+		</section>
+		<!-- end jumbotron -->
+		<!-- Welcome To Cube Sloutions section section_2  -->
+		<section class="welcome_sec page " id="section_2"  id="second" >
+			<div class="container">
+				<div>
+					<div class="row"><h2 class=" wow fadeInDownBig " data-wow-delay="0.3s" >Welcome To CUBE Sloutions </h2></div>
+					<div id="welcome_mark" class="mark wow fadeInLeftBig "  data-wow-delay="0.3s"></div>
+					<div id="welcome_txt" class=" wow fadeInUp " data-wow-delay="0.3s">
+						<span>CUBE solutions</span> is a business solutions and development enterprise founded in Egypt by a group of youthful ambitious and highly motivated engineers co-operate to deliver the most creative and efficient solutions.
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div  class="certification" >
+					<div class="row">
+						<div class="container wow fadeInUp "  data-wow-delay="0.6s">
+							<a href="#">
+								<div class=" circle col-sm-4 col-md-3"  >
+									<div class="certificate_txt" >IMCauthorized software service Provider </div>
+								</div>
+							</a>
+							<a href="#">
+								<div class="  circle  col-sm-4 col-md-3 startup" >
+									<div   class="certificate_txt startup">Best 500 startups in Middle East</div>
+								</div>
+							</a>
+							<a href="#">
+								<div class="circle col-sm-4 col-md-3 microsoft" class="wow bounceInUp" >
+									<div  class="certificate_txt ">
+										Microsoft partner </Br> palzaspark support program
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- what_we_do -->
+		<section class="what_we_do" id="section_3"  class="page" id="third" >
+			<div class="container">
+				<div class="row">
+					<div class="row">
+						<h2 class=" wow fadeInDownBig " data-wow-delay="0.3s">What we do</h2>
+					</div>
+					<div id="what_we_do_mark" class=" mark wow fadeInLeftBig " data-wow-delay="0.5s">
+					</div>
+					<div id="spcialize_cat" >
+						<div class="row">
+							<div class="apps col-sm-3  wow slideInLeft" data-wow-delay="0.6s" >
+								<a href="#"><img src={% static "img/mobile_icon.png" %}></a>
+								<div class="app_txt">Mobile Apps</div>
+							</div>
+
+							<div  class="apps  col-sm-3 wow fadeInUp " data-wow-delay="0.6s" >
+								<a href="#"><img src={% static "img/web-based_apps.png" %}></a>
+								<div class="app_txt">Web-based apps</div>
+							</div>
+
+							<div  class="apps  col-sm-3 wow  fadeInUp" data-wow-delay="0.6s">
+								<a href="#"><img src={% static "img/desktop_apps.png" %}></a>
+								<div class="app_txt"> Desktop apps</div>
+							</div>
+							<div class="apps  col-sm-3 wow slideInRight" data-wow-delay="0.6s">
+								<a href="#"><img src={% static "img/web_sites.png" %}></a>
+								<div class="app_txt"> Web Sites</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<a href={% url 'portoflio' %} class="btn   btn-primary btn-success btn-lg wow  fadeInUp" data-wow-delay="0.8s">
+					Know More
+				</a>
+			</div>
+		</section>
+		<!-- what_we_do_end  -->
+
+		<!-- We have Worked With  section -->
+		<section class="worked_with_slider text-center " id="section_4">
+			<div class="container">
+				<div class="row">
+					<div class="row">
+						<h2 class=" wow fadeInDownBig " data-wow-delay="0.3s">
+							We have Worked With
+						</h2>
+					</div>
+					<div id="worked_with_slider_mark" class="mark wow fadeInLeftBig " data-wow-delay="0.5s">
+					</div>
+					<div  class="container text-center ">
+						<div class="  wow  fadeInUp"  data-wow-delay="0.5s">
+							<div  class=" comp col-md-4 col-sm-4 col-xs-6 vcenter ">
+								<a href="#"><img src={% static "img/comp_1.png" %} class="grayscale"></a>
+							</div>
+							<div class="comp col-md-4 col-sm-4 col-xs-6 vcenter ">
+								<a href="#"><img src={% static "img/comp_2.png" %} class="grayscale"></a>
+							</div>
+
+							<div  class="comp col-md-4 col-sm-4 col-xs-6 vcenter">
+								<a href="#"><img src={% static "img/comp_3.png" %} class="grayscale"></a>
+							</div>
+						</div>
+
+						<div class=" wow  fadeInUp"  data-wow-delay="1s">
+							<div  class=" comp col-md-4 col-sm-4 col-xs-6 ">
+								<a href="#"><img src={% static "img/comp_4.png" %} class="grayscale"></a>
+							</div>
+							<div class="comp col-md-4 col-sm-4 col-xs-6">
+								<a href="#"><img src={% static "img/comp_5.png" %} class="grayscale"></a>
+							</div>
+							<div  class="comp col-md-4 col-sm-4 col-xs-6">
+								<a href="#"><img src={% static "img/comp_11.png" %} class="grayscale"></a>
+							</div>
+						</div>
+
+						<div class=" wow  fadeInUp"  data-wow-delay="1.5s">
+							<div  class=" comp col-md-4 col-sm-4 col-xs-6">
+								<a href="#"><img src={% static "img/comp_7.png" %} class="grayscale"></a>
+							</div>
+							<div class="comp col-md-4 col-sm-4 col-xs-6">
+								<a href="#"><img src={% static "img/comp_8.png" %} class="grayscale"></a>
+							</div>
+							<div  class="comp col-md-4 col-sm-4 col-xs-6">
+								<a href="#"><img src={% static "img/comp_9.png" %} class="grayscale" ></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- We have Worked With  section end -->
+
+		<!-- What People Say section ? -->
+		<section class="people_say" id="section_5" >
+			<div class="container">
+				<div class="row">
+					<div class="row">
+						<h2 class=" wow fadeInDownBig " data-wow-delay="0.3s">
+							What People Say ?
+						</h2>
+					</div>
+					<div id="people_say_mark" class="mark wow fadeInLeftBig " data-wow-delay="0.5s">
+					</div>
+					<div id="carousel" class='outerWrapper ' >
+					{% for item in items %}
+						<div class="item " >
+							<img src={% static "img/say_shap.png" %} >
+							<p >
+								{{ item.content }}
+							</p>
+							<a href="#"><img src={{ item.image.url }} class="circular"></a>
+							<div class="per_info">
+								{{ item.name }} </br> <span>{{ item.title }}</span>
+							</div>
+						</div>
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- What People Say ? end -->
+
+		<!-- google map -->
+		<section class="section_6" id="section_6" >
+			<div class="contact wow fadeInRight"  data-wow-delay="2.5s" data-wow-duration="1s">
+				<div >
+					<h3>Contact</h3>
+					<div class="cube_egypt_txt">
+						<h3>CUBE Egypt</h3>
+					</div>
+					<div class="phone_num_dev">
+						<img src={% static "img/phone_icon.png" %} id="phone_icon">
+						<h4 class="phone_number">+2(011)1121-029</h4>
+					</div>
+					<div class="clear"></div>
+					<div class="mail_dev" >
+						<img src={% static "img/mail_icon.png" %} id="mail_icon">
+						<h4 class="mail_txt">info@cubeegypt.com</h4>
+					</div>
+					<div class="clear"></div>
+					<div class ="social_media">
+						<a href="#"><img src={% static "img/facebook_icon.png" %} id="facebook_icon"></a>
+						<a href="#"><img src={% static "img/twitter_icon.png" %} id="twitter_icon"></a>
+						<a href="#"><img src={% static "img/behance_icon.png" %} id="behance_icon"></a>
+						<a href="#"><img src={% static "img/linkedin_icon.png" %} id="linkedin_icon"></a>
+					</div>
+				</div>
+			</div>
+			<!-- google map start -->
+			<div id="test1" class="gmap3"></div>
+			<!-- google map  end -->
+		</section>
+				<footer class =" container-fluid ">
+					<div class="row">
+						<div id="social_media" class=" pull-left  col-md-6 col-sm-6 col-md-6">
+							<a href="#"><img src={% static "img/facebook_icon.png" %} id="facebook_icon" class="social_icon"></a>
+							<a href="#"><img src={% static "img/twitter_icon.png" %} id="twitter_icon" class="social_icon"></a>
+							<a href="#"><img src={% static "img/behance_icon.png" %} id="behance_icon" class="social_icon"></a>
+							<a href="#"><img src={% static "img/linkedin_icon.png" %} id="linkedin_icon" class="social_icon"></a>
+						</div>
+						<h4 class="text-center col-xs-6 col-md-6 col-sm-6 col-md-6 ">
+							Copyright &copy; 2014 | cube| All Rights Reserved
+						</h4>
+					</div>
+				</footer>
+	</body>
+
+	<!-- javascript  sheets -->
+	<script type="text/javascript" src={% static "js/jquery-2.1.1.js" %} ></script>
+	<script type="text/javascript" src={% static "js/bootstrap.min.js" %}></script>
+	<script type="text/javascript" src={% static "js/script.js" %}></script>
+	<script type="text/javascript" src={% static "js/waltzerjs.js" %}></script>
+	<script src={% static "js/wow.min.js" %}></script>
+	<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBn5vt6b5ZJMxDWS0pioky5PK3EJXBlLsU"></script>
+	<script type="text/javascript" src={% static "js/gmap3.js" %}></script>
+	<!-- javascript  sheets -->
+
+</html>

@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,300' rel='stylesheet' type='text/css'>
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href={% static "css/bootstrap.min.css" %}>
+    <link rel="stylesheet" type="text/css" href={% static "css/common-styles.css" %}>
+    <link rel="stylesheet"  type="text/css" href={% static "css/animate.min.css" %}>
+    <!-- stylesheet -->
+    <link rel="shortcut icon" href={% static "img/faveicon.ico" %} type="image/x-icon">
+{% endblock head %}
+
+
+{% block content %}
+<body id="about_us">
+    <div class="container-fluid inner-pages-nav">
+        <div class="container">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand colored_logo" href="#"></a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href={% url 'index' %}>Home</a></li>
+                            <li><a href={% url 'projects' %}>Projects</a></li>
+                            <li><a href={% url 'portoflio' %}>Portfolio</a></li>
+                            <li><a href={% url 'about' %}>About</a></li>
+                            <li><a href={% url 'blog' %}>Blog</a></li>
+                            <li><a href={% url 'contact_us' %}>Contact</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid about_hdr  inner-pages-hdr wow fadeInUp"data-wow-duration="1s">
+        <div class="row">
+            <h1 class="text-center"> About Us</h1>
+        </div>
+    </div>
+    <div class="about_p_txt">
+        <div class="container">
+            <div class="row ">
+                <div  class="col-sm-6 hdr wow fadeInLeft tag_line" data-wow-delay="0.5s">
+                    <h1>Reaching Beyond</h1>
+                    <h1>Technology Era</h1>
+                    <div  id="about_p_mark" ></div>
+                </div>
+                <div id="paragraph" class="col-sm-6 wow fadeInUp" data-wow-delay="1s">
+                    <p>
+                        CUBE is based on delivering customized personalized solutions that guarantee our clients&#39; success.
+                    </p>
+                    <p>
+                        Our inspired team members don&#39;t only rely on the tool itself &#44; their creative thinking extracts ideas that make our products made easy to get on and flexible to use.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hr"></div>
+    <div class=" vision-mission container">
+        <div class="row">
+            <div class="vision col-sm-6 col-md-6 col-lg-6 wow fadeInUp " data-wow-delay="2s" data-wow-duration="1s">
+                <img src={% static "img/mission_icon.png" %} class="img-responsive ">
+                <h2> Our Vision</h2>
+                <h3>To be Middle&#45;East leading provider of technology solutions and services.</h3>
+            </div>
+            <div  class="mission col-md-6 col-sm-6 col-lg-6 wow fadeInUp " data-wow-delay="2s" data-wow-duration="1s">
+                <img src={% static "img/vision_icon.png" %} class="img-responsive ">
+                <h2>  Our Mission</h2>
+                <h3>
+                    Providing innovative information technology solutions throughout enrichment technology usability to develop businesses and organizations
+                </h3>
+            </div>
+        </div>
+    </div>
+    <a href="#">
+    <div class="container-fluid download_profile wow fadeInLeft " data-wow-delay="0.3s" data-wow-duration="1s">
+        <div class="row  text-center">
+            <div id="txt_icon">
+                <img src={% static "img/download_icon.png" %} class="img-responsive ">
+                <h1>Download our Profile</h1>
+            </div>
+        </div>
+    </div>
+    </a>
+    <div class="container ">
+        <div class="row ">
+            <div class="cubeians text-center" >
+                <h1 class="wow fadeInUp" data-wow-delay="1s" data-wow-duration="1s">MEET CUBIANS</h1>
+                <h3  class="wow fadeInLeft " data-wow-delay="1.5s" data-wow-duration="1s">The people behind Cube</h3>
+                <div class="cubeians_mark text-center wow fadeInLeftBig"  data-wow-delay="1.5s" data-wow-duration="1s"></div>
+            </div>
+        </div>
+        <div class="team container">
+            <div class="row">
+            {% for worker in workers %}
+                <div class="workers person_1 col-sm-4 col-lg-3 wow flipInY" data-wow-delay="1s" data-wow-duration="1.5s" >
+                    <img src={{ worker.image.url }} class="img-responsive">
+                    <h3 class="text-center">{{ worker.name }}</h3>
+                    <h4 class="text-center">{{ worker.title }}</h4>
+                </div>
+                {% endfor %}
+            <div class="clear"></div>
+            <div class=" worker_qoutes row  wow flipInY "  data-wow-delay="1s" data-wow-duration="1.5s">
+                <!-- <div id="worker_qoutes"  class="col-sm-12 col-lg-12 col-xs-6"> -->
+                    <img src={% static "img/top_qoute_icon.png" %}  class="pull-right ">
+                    <div id="carousel" class='outerWrapper vert "'>
+                    {% for worker in workers %}
+                        <div class="item">
+                            <div>
+                                <p>
+                                    {{ worker.content }}
+                                </p>
+                                <div class="pull-right dev_info">
+                                    <h4>{{ worker.name }}</h4>
+                                    <h5>{{ worker.title }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                    <img src={% static "img/bottom_qoute_icon.png" %} id="bottom_qoute">
+                <!-- </div>              -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class =" container-fluid ">
+        <div class="row">
+            <div id="social_media" class=" pull-left  col-md-6 col-sm-6 col-md-6">
+                <a href="#"><img src={% static "img/facebook_icon.png" %} id="facebook_icon" class="social_icon"></a>
+                <a href="#"><img src={% static "img/twitter_icon.png" %} id="twitter_icon" class="social_icon"></a>
+                <a href="#"><img src={% static "img/behance_icon.png" %} id="behance_icon" shuclass="social_icon"></a>
+                <a href="#"><img src={% static "img/linkedin_icon.png" %} id="linkedin_icon" class="social_icon"></a>
+            </div>
+            <h4 class="text-center col-md-6 col-sm-6 col-md-6 ">
+                Copyright &copy; 2014 | cube| All Rights Reserved
+            </h4>
+        </div>
+    </footer>
+</body>
+{% endblock content %}
+<!-- javascript -->
+{% block js %}
+    <script type="text/javascript" src={% static "js/jquery-2.1.1.js" %} ></script>
+    <script type="text/javascript" src={% static "js/bootstrap.min.js" %}></script>
+    <script type="text/javascript" src={% static "js/waltzerjs.js" %}></script>
+    <script type="text/javascript" src={% static "js/about_us.js" %}></script>
+    <script src={% static "js/wow.min.js" %}></script>
+    <script>
+        new WOW().init();
+    </script>
+{% endblock js %}
+<!-- javascript -->

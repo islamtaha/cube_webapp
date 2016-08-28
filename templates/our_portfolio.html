@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% block head %}
+	<title>our portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- stylesheet -->
+	<link rel="stylesheet" type="text/css" href={% static "css/bootstrap.min.css" %}>
+	<link rel="stylesheet" type="text/css" href={% static "css/common-styles.css" %}>
+	<link rel="stylesheet" type="text/css" href={% static "css/portfolio.css" %}>
+	<link rel="stylesheet"  type="text/css" href={% static "css/animate.min.css" %}>
+	<!-- stylesheet -->
+
+	<!-- faveicon_tag -->
+	<link rel="shortcut icon" href={% static "img/faveicon.ico" %} type="image/x-icon">
+	<!-- faveicon_tag -->
+{% endblock head %}
+
+{% block content %}
+<body id="portfolio-page">
+	<div class="container-fluid inner-pages-nav">
+		<div class="container">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand colored_logo" href={% url 'index' %}></a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href={% url 'index' %}>Home</a></li>
+							<li><a href={% url 'projects' %}>Projects</a></li>
+							<li><a href={% url 'portoflio' %}>Portfolio</a></li>
+							<li><a href={% url 'about' %}>About</a></li>
+							<li><a href={% url 'blog' %}>Blog</a></li>
+							<li><a href={% url 'contact_us' %}>Contact</a></li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+		</div>
+	</div>
+	<div class="container-fluid portfolio_hdr .inner-pages-hdr " >
+			<div class="row">
+				<h1 class="text-center"> Our Portfolio</h1>
+			</div>
+	</div>
+		<div class="container-fluid app_cat wow fadeInUp" data-wow-duration="1s" >
+			<div class="row text-center">
+				<a href="{% url 'portoflio' %}"><img src={% static "img/all_work.png" %} class="icon"></a>
+				<a href="{% url 'portoflio' %}?type=mobile"><img src={% static "img/mobile_icon.png" %} class="icon"></a>
+				<a href="{% url 'portoflio' %}?type=cloud"><img src={% static "img/web-based_apps.png" %} class="icon"></a>
+				<a href="{% url 'portoflio' %}?type=desktop"><img src={% static "img/desktop_apps.png" %} class="icon"></a>
+				<a href="{% url 'portoflio' %}?type=website"><img src={% static "img/web_sites.png" %} class="icon"></a>
+			</div>
+		</div>
+	<!-- <div class="gallery high_light"> -->
+	<div class="apps_gallary ">
+		<div class="container">
+			<div class="row wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1s">
+				{% for p in portoflio %}
+				<div class=" app col-sm-6 col-md-6 ">
+					<img src={{ p.image.url }} class="img-responsive">
+					<div class="caption">
+						<h1>{{ p.name }}</h1>
+						<h2 >{{ p.get_type_display }}</h2>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="row text-center wow fadeInUp " data-wow-delay="1.5s" data-wow-duration="1s">
+		<a href="#" class="btn   btn-primary btn-success btn-lg text-center">
+			See More
+		</a>
+	</div>
+	<footer class	=" container-fluid ">
+		<div class="row">
+			<div id="social_media" class=" pull-left  col-md-4">
+				<a href="#"><img src={% static "img/facebook_icon.png" %} id="facebook_icon" class="social_icon"></a>
+				<a href="#"><img src={% static "img/twitter_icon.png" %} id="twitter_icon" class="social_icon"></a>
+				<a href="#"><img src={% static "img/behance_icon.png" %} id="behance_icon" class="social_icon"></a>
+				<a href="#"><img src={% static "img/linkedin_icon.png" %} id="linkedin_icon" class="social_icon"></a>
+			</div>
+			<h4 class="text-center col-md-4 ">
+				Copyright &copy; 2014 | cube| All Rights Reserved
+			</h4>
+		</div>
+	</footer>
+</body>
+{% endblock content %}
+	<!-- javascript -->
+	{% block js %}
+	<script type="text/javascript" src={% static "js/jquery-2.1.1.js" %} ></script>
+	<script type="text/javascript" src={% static "js/bootstrap.min.js" %}></script>
+	<script src={% static "js/wow.min.js" %}></script>
+	<script>
+	 new WOW().init();
+	</script>
+	{% endblock js %}
+	<!-- javascript -->

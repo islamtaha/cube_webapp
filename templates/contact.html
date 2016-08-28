@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+	<title>Contact</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,300' rel='stylesheet' type='text/css'>
+	<!-- stylesheet -->
+	<link rel="stylesheet" type="text/css" href={% static "css/bootstrap.min.css" %}>
+	<link rel="stylesheet" type="text/css" href={% static "css/common-styles.css" %}>
+	<link rel="stylesheet"  type="text/css" href={% static "css/animate.min.css" %}>
+	<!-- stylesheet -->
+
+	<!-- faveicon_tag -->
+	<link rel="shortcut icon" href={% static "img/faveicon.ico" %} type="image/x-icon">
+	<!-- faveicon_tag -->
+{% endblock head %}
+{% block content %}
+<body id="contact_page">
+	<!-- jumbotron -->
+	<div class="container-fluid inner-pages-nav" >
+		<div class="container">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand colored_logo" href={% url 'index' %}></a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href={% url 'index' %}>Home</a></li>
+							<li><a href={% url 'projects' %}>Projects</a></li>
+							<li><a href={% url 'portoflio' %}>Portfolio</a></li>
+							<li><a href={% url 'about' %}>About</a></li>
+							<li><a href={% url 'blog' %}>Blog</a></li>
+							<li><a href={% url 'contact_us' %}>Contact</a></li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+		</div>
+	</div>
+	<div class="container-fluid contact_hdr  inner-pages-hdr wow fadeInUp"data-wow-duration="1s">
+		<div class="row">
+			<h1 class="text-center  " > Keep In Touch</h1>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row contact_title wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+			<h3 class="text-center  col-xs-12  ">
+				We&#39;d love to hear from you! Send us a message </br> using the form below.
+			</h3>
+		</div>
+	</div>
+	{% if form.errors %}
+	{% if messages %}
+	<div  role="alert">
+		<ul class="messages">
+    		{% for message in messages %}
+    			<p{% if message.tags == "error" %} class="alert alert-danger"{% endif %}>
+    			{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+    			{{ message }}
+    			{% endif %}
+    			</li>
+    		{% endfor %}
+		</ul>
+	{% endif %}
+	{% else %}
+	</div>
+	{% if messages %}
+	<div role="alert">
+		<ul class="messages">
+    		{% for message in messages %}
+    			<p{% if message.tags == "success"  %} class="alert alert-success"{% endif %}>
+    			{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    			{{ message }}
+    			{% endif %}
+    			</li>
+    		{% endfor %}
+		</ul>
+	{% endif %}
+	{% endif %}
+	</div>
+			<div class=" row text-center contact_mark wow fadeInLeftBig" data-wow-delay="1.5s" data-wow-duration="1s" >
+			</div>
+	<div class="container ">
+		{% load widget_tweaks %}
+		<form role="form " class="contact_form" method="post" action="."> {% csrf_token %}
+			<div class="form-group col-sm-4  wow  fadeInUp " data-wow-delay="1.7s" data-wow-duration="1s">
+				<p>
+				<label for="id_full_name">Full name</label>
+				{{ form.full_name|add_class:"form-control"|attr:"name:full_name"|attr:"id:id_full_name" }}
+				</p>
+			</div>
+			<div class="form-group col-sm-8  email wow  fadeInUp" data-wow-delay="1.7s" data-wow-duration="1s">
+				<p>
+				<label for="id_email">Email</label>
+				{{ form.email|add_class:"form-control"|attr:"name:email"|attr:"id:id_email" }}
+				</p>
+			</div>
+			<div class="form-group col-sm-4 wow fadeInUp " data-wow-delay="2s" data-wow-duration="1s">
+				<p>
+				<label for="id_phone_no">Phone Number</label>
+				{{ form.phone_no|add_class:"form-control"|attr:"name:phone_no"|attr:"id:id_phone_no" }}
+				</p>
+			</div>
+			<div class="form-group col-sm-8 wow fadeInUp" data-wow-delay="2s" data-wow-duration="1s">
+				<p>
+				<label for="id_message">Message</label>
+				{{ form.message|add_class:"form-control"|attr:"name:message"|attr:"id:id_message" }}
+				</p>
+			</div>
+			<div class="col-sm-12 text-center wow  fadeInUp " data-wow-delay="2.5s" data-wow-duration="1s">
+				<button type="submit" class="btn  btn-primary ">Send Message</button>
+			</div>
+		</form>
+	</div>
+		<!-- google map -->
+		<section class="section_6" id="section_6">
+			<div class="contact wow fadeInRight"  data-wow-delay="3s" data-wow-duration="1s" >
+				<div >
+					<h3>Contact</h3>
+					<div class="cube_egypt_txt">
+						<h3>CUBE Egypt</h3>
+					</div>
+					<div class="phone_num_dev">
+						<img src={% static "img/phone_icon.png" %} id="phone_icon">
+						<h4 class="phone_number">+2(011)1121-029</h4>
+					</div>
+					<div class="clear"></div>
+					<div class="mail_dev" >
+						<img src={% static "img/mail_icon.png" %} id="mail_icon">
+						<h4 class="mail_txt">info@cubeegypt.com</h4>
+					</div>
+					<div class="clear"></div>
+					<div class ="social_media">
+						<a href="#"><img src={% static "img/facebook_icon.png" %} id="facebook_icon"></a>
+						<a href="#"><img src={% static "img/twitter_icon.png" %} id="twitter_icon"></a>
+						<a href="#"><img src={% static "img/behance_icon.png" %} id="behance_icon"></a>
+						<a href="#"><img src={% static "img/linkedin_icon.png" %} id="linkedin_icon"></a>
+					</div>
+				</div>
+			</div>
+			<!-- google map start -->
+			<div id="test1" class="gmap3"></div>
+			<!-- google map  end -->
+			 <footer class =" container-fluid ">
+			  <div class="row">
+			   <div id="social_media" class=" pull-left col-xs-6 col-md-6 col-sm-6 col-md-6">
+			    <a href="#"><img src={% static "img/facebook_icon.png" %} id="facebook_icon" class="social_icon"></a>
+			    <a href="#"><img src={% static "img/twitter_icon.png" %} id="twitter_icon" class="social_icon"></a>
+			    <a href="#"><img src={% static "img/behance_icon.png" %} id="behance_icon" class="social_icon"></a>
+			    <a href="#"><img src={% static "img/linkedin_icon.png" %} id="linkedin_icon" class="social_icon"></a>
+			   </div>
+			   <h4 class="text-center col-xs-6 col-md-6 col-sm-6 col-md-6 ">
+			    Copyright &copy; 2014 | cube| All Rights Reserved
+			   </h4>
+			  </div>
+			 </footer>
+		</section>
+	</body>
+	{% endblock content %}
+	<!-- javascript  sheets -->
+	{% block js %}
+	<script type="text/javascript" src={% static "js/jquery-2.1.1.js" %} ></script>
+	<script type="text/javascript" src={% static "js/bootstrap.min.js" %}></script>
+	<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+	<script type="text/javascript" src={% static "js/script.js" %}></script>
+	<script type="text/javascript" src={% static "js/waltzerjs.js" %}></script>
+	<script src={% static "js/wow.min.js" %}></script>
+	<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBn5vt6b5ZJMxDWS0pioky5PK3EJXBlLsU"></script>
+	<script type="text/javascript" src={% static "js/gmap3.js" %}></script>
+	<script src={% static "js/wow.min.js" %}></script>
+	<!-- javascript  sheets -->
+	{% endblock js %}
